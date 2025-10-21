@@ -52,7 +52,7 @@ Standard shell-globbing is also supported.
 For example, to format all Julia files in a directory `foo`:
 
 ```bash
-juliaformatter foo.jl bar.jl
+juliaformatter foo/*
 ```
 
 ## Contributing
