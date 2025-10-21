@@ -2,6 +2,7 @@ module JuliaFormatterApp
 
 export compile
 
+using ArgParse: ArgParseSettings, @add_arg_table!, parse_args
 using JuliaFormatter: format
 using PackageCompiler: create_app
 
@@ -18,9 +19,29 @@ function compile()
 end
 
 function julia_main()::Cint
-    for arg in ARGS
-        format(arg)
+    s = ArgParseSettings()
+
+    @add_arg_table! s begin
+        "--format-docstrings"
+        arg_type = Bool
+        default = false
+
+        "--format-markdown"
+        arg_type = Bool
+        default = false
+
+        "files"
+        nargs = '*'
     end
+
+    parsed_args = parse_args(s)
+
+    format(
+        parsed_args["files"],
+        format_docstrings = parsed_args["format-docstrings"],
+        format_markdown = parsed_args["format-markdown"],
+    )
+
     return 0
 end
 

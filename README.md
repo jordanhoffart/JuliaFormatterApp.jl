@@ -55,6 +55,16 @@ For example, to format all Julia files in a directory `foo`:
 juliaformatter foo/*
 ```
 
+### Command line options
+`juliaformatter` also supports command line options.
+See `juliaformatter --help` for a list of options.
+The options must come before the files being formatted.
+For example
+
+```bash
+juliaformatter --option=value file.jl
+```
+
 ## Contributing
 
 Contributions are welcome!
