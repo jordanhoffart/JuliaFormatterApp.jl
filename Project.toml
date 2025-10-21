@@ -1,0 +1,8 @@
+name = "JuliaFormatterApp"
+uuid = "811bcd72-1982-494e-b7de-09074474f160"
+authors = ["Jordan Hoffart <jordanhoffart@tamu.edu>"]
+version = "0.1.0"
+
+[deps]
+JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
+PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
